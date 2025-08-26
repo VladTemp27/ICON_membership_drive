@@ -17,7 +17,7 @@
       } = useSignupViewModel(type);
 
       const header = type === "renewal" ? "Renew Membership" : "Create Account";
-      localStorage.setItem('membershipType', type);
+      localStorage.setItem('membershipType', type === undefined ? "registration": type);
 
     return (
       <div className="relative flex min-h-screen flex-col items-center justify-center p-6 md:p-10 overflow-hidden z-10">
