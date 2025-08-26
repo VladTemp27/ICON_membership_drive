@@ -21,7 +21,7 @@ export function usePaymentViewModel() {
     setResponseMessage("");
 
     try {
-      const response = await axios.post("http://localhost:3000/api/v2/payments", paymentData);
+      const response = await axios.post("https://apicon.lestat.cloud/api/v2/payments", paymentData);
       setResponseMessage("Payment successful!");
       console.log("API response:", response.data);
       localStorage.setItem('transactionId', response.data._id);

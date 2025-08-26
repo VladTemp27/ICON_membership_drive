@@ -2,7 +2,7 @@
 import axios from "axios";
 import { getToken } from "./authService";
 
-const API_URL = "http://localhost:3000/api/v2";
+const API_URL = "https://apicon.lestat.cloud/api/v2";
 
 export async function getPayments() {
   const token = getToken();

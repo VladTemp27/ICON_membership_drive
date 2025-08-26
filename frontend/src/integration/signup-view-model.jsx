@@ -32,13 +32,13 @@ export function useSignupViewModel(type) {
         console.log("Renewal form submitted:", form.id);
         const renewalForm = form;
         delete renewalForm.idNumber;
-        const response = await axios.put(`http://localhost:3000/api/v2/members/${form.id}`, renewalForm);
+        const response = await axios.put(`https://apicon.lestat.cloud/api/v2/members/${form.id}`, renewalForm);
         setResponseMessage("Account created successfully!");
         console.log("API response:", response.data);
         localStorage.setItem("memberData", JSON.stringify(response.data));
         navigate('/payment-option');
       }else{
-        const response = await axios.post("http://localhost:3000/api/v2/members", form);
+        const response = await axios.post("https://apicon.lestat.cloud/api/v2/members", form);
         setResponseMessage("Account created successfully!");
         console.log("API response:", response.data);
         localStorage.setItem("memberData", JSON.stringify(response.data));
